@@ -6,7 +6,7 @@ require('./show_director');
 
 const Director = bookshelf.Model.extend({
   tableName: 'directors',
-  shows: function() {return this.belongdToMany('Show').through('Show_Directors')}
+  shows: function() {return this.belongdToMany('Show').through('Show_Director')}
 })
 
 module.exports = bookshelf.model('Director', Director);
