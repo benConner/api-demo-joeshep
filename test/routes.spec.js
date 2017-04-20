@@ -13,7 +13,7 @@ describe('Shows routes', () => {
 
   beforeEach( () => {
     return knex.migrate.rollback()
-    .then( () => {  
+    .then( () => {
       return knex.migrate.latest()
     })
     .then( () => {
@@ -76,7 +76,7 @@ describe('Shows routes', () => {
        res.should.have.status(202);
        res.should.be.json;
        res.body.should.be.a('object');
-       
+
        chai.request(server)
        .get('/api/v1/shows')
        .then( (res) => {
@@ -92,20 +92,10 @@ describe('Shows routes', () => {
         res.body[0].should.have.property('genre');
         res.body[0].genre.should.equal('comedy');
         res.body[0].should.have.property('inProduction');
-        res.body[0].explicit.should.equal(false); 
+        res.body[0].explicit.should.equal(false);
        });
- 
+
       });
     });
   });
-
-
-
-
-
-
-
-
-
-
 });
